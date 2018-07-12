@@ -13,10 +13,11 @@
     </header>
     <div class="form-container">
         <form>
+            <h3 class="form-headline"> Full name </h3>
             <input type="text" name="firstname" placeholder="First name">
             <input type="text" name="lastname" placeholder="Last name">
             <div class="date-container">
-                <h3> Birthday </h3>
+                <h3 class="form-headline"> Birthday </h3>
                 <select>
                     <option value="January"> January </option>
                     <option value="February"> February </option>
