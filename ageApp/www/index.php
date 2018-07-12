@@ -35,7 +35,7 @@
                 <input type="text" name="day" placeholder="Day">
                 <input type="text" name="year" placeholder="Year">
             </div>
-            <input type="button" value="Submit">
+            <input type="submit" value="Submit">
         </form>
     </div>
 </body>

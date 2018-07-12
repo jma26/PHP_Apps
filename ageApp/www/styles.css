@@ -43,7 +43,7 @@ input[name="day"], input[name="year"] {
     margin-bottom: 4px;
 }
 
-input[type="button"] {
+input[type="submit"] {
     background-color: #03A9F4;
     border: 1px solid #03A9F4;
     border-radius: 4px;
@@ -52,7 +52,7 @@ input[type="button"] {
     padding: 8px;
 }
 
-input[type="button"]:active {
+input[type="submit"]:active {
     -webkit-box-shadow: inset 0px 0px 16px #c1c1c1;
     -moz-box-shadow: inset 0px 0px 16px #c1c1c1;
     box-shadow: inset 0px 0px 16px #c1c1c1;
