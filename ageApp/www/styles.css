@@ -1,17 +1,18 @@
 * {
-    color: #FFFFFF;
     margin: 0px;
     padding: 0px;
 }
 
 header {
     background-color: #03A9F4;
+    border-top: 1.5rem solid #0288D1;
+    box-shadow: 0 4px 2px -1px #BDBDBD;
     padding: 64px 0px;
     width: 100vw;
-    box-shadow: 0 4px 2px -1px #BDBDBD;
 }
 
 .header-headline {
+    color: #FFFFFF;
     font-size: 3rem;
     text-align: center;
 }
