@@ -1,4 +1,5 @@
 * {
+    color: #212121;
     margin: 0px;
     padding: 0px;
 }
@@ -15,4 +16,45 @@ header {
     color: #FFFFFF;
     font-size: 3rem;
     text-align: center;
+}
+
+.form-container {
+    background-color: #FF9800;
+    box-shadow: 0 0 10px 1px #757575;
+    display: inline-block;
+    margin-top: 24px;
+    padding: 16px;
+}
+
+input[name="firstname"], input[name="lastname"] {
+    width: 100px;
+}
+
+input[name="day"], input[name="year"] {
+    width: 40px;
+}
+
+.date-container {
+    margin: 8px 0px;
+}
+
+.form-headline {
+    color: #FFFFFF;
+    margin-bottom: 4px;
+}
+
+input[type="button"] {
+    background-color: #03A9F4;
+    border: 1px solid #03A9F4;
+    border-radius: 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 8px;
+}
+
+input[type="button"]:active {
+    -webkit-box-shadow: inset 0px 0px 16px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 16px #c1c1c1;
+    box-shadow: inset 0px 0px 16px #c1c1c1;
+    outline: none;
 }
