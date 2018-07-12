@@ -31,7 +31,7 @@ input[name="firstname"], input[name="lastname"] {
 }
 
 input[name="day"], input[name="year"] {
-    width: 40px;
+    width: 50px;
 }
 
 .date-container {
