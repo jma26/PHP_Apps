@@ -12,13 +12,13 @@
         <h1 class="header-headline"> What's your age? </h1>
     </header>
     <div class="form-container">
-        <form>
+        <form action="" method="POST">
             <h3 class="form-headline"> Full name </h3>
             <input type="text" name="firstname" placeholder="First name">
             <input type="text" name="lastname" placeholder="Last name">
             <div class="date-container">
                 <h3 class="form-headline"> Birthday </h3>
-                <select>
+                <select name="month">
                     <option value="January"> January </option>
                     <option value="February"> February </option>
                     <option value="March"> March </option>
@@ -32,11 +32,25 @@
                     <option value="November"> November </option>
                     <option value="December"> December </option>
                 </select>
-                <input type="text" name="day" placeholder="Day">
-                <input type="text" name="year" placeholder="Year">
+                <input type="number" min="1" max="31" name="day" placeholder="Day">
+                <input type="number" max="<?php echo date('Y'); ?>" name="year" placeholder="Year">
             </div>
-            <input type="submit" value="Submit">
+            <input name="submit" type="submit" value="Submit">
         </form>
     </div>
 </body>
 </html>
+
+<?php
+    if (isset($_POST['submit'])) {
+        $bdayArray = Array(
+            "first" => $_POST["firstname"],
+            "last" => $_POST["lastname"],
+            "month" => $_POST["month"],
+            "day" => $_POST["day"],
+            "year" => $_POST["year"]
+        );
+    };
+
+    print_r($bdayArray);
+?>
