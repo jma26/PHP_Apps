@@ -38,19 +38,35 @@
             <input name="submit" type="submit" value="Submit">
         </form>
     </div>
+    <div class="result-container">
+        <ul>
+            <?php 
+                $currentYear = (date("Y"));
+                $currentMonth = (date("n"));
+                $currentDay = (date("j"));
+                $months = array(
+                    "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+                );
+
+                // Update $bdayArray with post submission
+                if (isset($_POST['submit'])) {
+                    $bdayArray[] = Array(
+                        "first" => $_POST["firstname"],
+                        "last" => $_POST["lastname"],
+                        "month" => $_POST["month"],
+                        "day" => $_POST["day"],
+                        "year" => $_POST["year"]
+                    );
+                };
+
+                // Display each person's name and age
+                if (isset($bdayArray)) {
+                    foreach($bdayArray as $person) {
+                        echo '<li>' . $person['first'] . ' ' . $person['last'] . ' is ' . ($currentYear - $person['year']) . ' years, ' .($currentMonth - (array_search($person['month'], $months) + 1)) . ' months, and ' . $currentDay . ' days old</li>';
+                    };
+                }
+            ?>
+        </ul>
+    </div>
 </body>
 </html>
-
-<?php
-    if (isset($_POST['submit'])) {
-        $bdayArray = Array(
-            "first" => $_POST["firstname"],
-            "last" => $_POST["lastname"],
-            "month" => $_POST["month"],
-            "day" => $_POST["day"],
-            "year" => $_POST["year"]
-        );
-    };
-
-    print_r($bdayArray);
-?>
