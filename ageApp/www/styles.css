@@ -58,3 +58,16 @@ input[type="submit"]:active {
     box-shadow: inset 0px 0px 16px #c1c1c1;
     outline: none;
 }
+
+.result-container {
+    border: 2px solid green;
+    display: inline-block;
+    margin-top: 24px;
+    padding: 16px;
+    vertical-align: top;
+}
+
+.result-container ul {
+    list-style-position: inside;
+    padding-left: 16px;
+}
