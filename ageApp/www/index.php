@@ -1,3 +1,8 @@
+<?php
+    // Start the session
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,22 +52,28 @@
                 $months = array(
                     "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
                 );
-                $bdayArray = array();
+
+                // Initialize $_SESSION as an array if not already
+                if (!is_array($_SESSION['bdayArray'])) {
+                    $_SESSION['bdayArray'] = array();
+                }
 
                 // Update $bdayArray with post submission
                 if (isset($_POST['submit'])) {
-                    array_push($bdayArray, array(
+                    $_SESSION['bdayArray'][] = array(
                         "first" => $_POST["firstname"],
                         "last" => $_POST["lastname"],
                         "month" => $_POST["month"],
                         "day" => $_POST["day"],
                         "year" => $_POST["year"]
-                    ));
+                    );
                 };
 
+                var_dump($_SESSION['bdayArray']);
+
                 // Display each person's name and age
-                if (isset($bdayArray)) {
-                    foreach($bdayArray as $person) {
+                if (isset($_SESSION['bdayArray'])) {
+                    foreach($_SESSION['bdayArray'] as $person) {
                         $fullname = $person['first'] . ' ' . $person['last'];
                         $birthday = $person['month'] . ', ' . $person['day'] . ', ' . $person['year'];
 
