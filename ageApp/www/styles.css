@@ -28,7 +28,7 @@ header {
     box-shadow: 0 0 10px 1px #757575;
     display: inline-block;
     height: 0%;
-    margin-top: 24px;
+    margin: 24px 12px 0px 0px;
     padding: 16px;
 }
 
@@ -70,7 +70,7 @@ input[type="submit"]:active {
     border: 2px solid #B3E5FC;
     box-shadow: 0 0px 10px 2px #BDBDBD;
     display: inline-block;
-    margin-top: 24px;
+    margin: 24px 0px 0px 12px;
     padding: 16px;
     vertical-align: top;
 }
