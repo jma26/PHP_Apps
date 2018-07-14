@@ -47,22 +47,38 @@
                 $months = array(
                     "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
                 );
+                $bdayArray = array();
 
                 // Update $bdayArray with post submission
                 if (isset($_POST['submit'])) {
-                    $bdayArray[] = Array(
+                    array_push($bdayArray, array(
                         "first" => $_POST["firstname"],
                         "last" => $_POST["lastname"],
                         "month" => $_POST["month"],
                         "day" => $_POST["day"],
                         "year" => $_POST["year"]
-                    );
+                    ));
                 };
 
                 // Display each person's name and age
                 if (isset($bdayArray)) {
                     foreach($bdayArray as $person) {
-                        echo '<li>' . $person['first'] . ' ' . $person['last'] . ' is ' . ($currentYear - $person['year']) . ' years, ' .($currentMonth - (array_search($person['month'], $months) + 1)) . ' months, and ' . $currentDay . ' days old</li>';
+                        $fullname = $person['first'] . ' ' . $person['last'];
+                        $birthday = $person['month'] . ', ' . $person['day'] . ', ' . $person['year'];
+
+                        $year = $person['year'];
+                        $month = (array_search($person['month'], $months) + 1);
+                        $day = $person['day'];
+                        
+                        // Retrieve years, months, and days old
+                        $dateString =  $year . '-' . $month . '-' . $day;
+                        // $date is a DateTimeObject
+                        $date = DateTime::createFromFormat('Y-n-j', $dateString);
+                        // Find difference
+                        $diff = $date->diff(new DateTime());
+                        echo $diff->format('%y years %m months and %d days');
+                        // Display peron's age in year, months, day
+                        echo '<li>' . $fullname . "'s birthday is " . $birthday . '. Person is ' . $year . ' years old </li>';
                     };
                 }
             ?>
