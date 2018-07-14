@@ -54,7 +54,7 @@
                 );
 
                 // Initialize $_SESSION as an array if not already
-                if (!is_array($_SESSION['bdayArray'])) {
+                if (!isset($_SESSION['bdayArray'])) {
                     $_SESSION['bdayArray'] = array();
                 }
 
@@ -68,8 +68,6 @@
                         "year" => $_POST["year"]
                     );
                 };
-
-                var_dump($_SESSION['bdayArray']);
 
                 // Display each person's name and age
                 if (isset($_SESSION['bdayArray'])) {
@@ -89,7 +87,7 @@
                         $diff = $date->diff(new DateTime());
                         $displayAge = $diff->format('%y years, %m months, and %d days old');
                         // Display peron's age in year, months, day
-                        echo '<li>' . $fullname . "'s birthday is " . $birthday . '. Person is ' . $displayAge . '</li>';
+                        echo '<li class="person-age">' . $fullname . "'s birthday is " . $birthday . '. Person is ' . $displayAge . '</li>';
                     };
                 }
             ?>
