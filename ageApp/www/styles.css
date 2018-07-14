@@ -4,6 +4,11 @@
     padding: 0px;
 }
 
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
 header {
     background-color: #03A9F4;
     border-top: 1.5rem solid #0288D1;
@@ -22,6 +27,7 @@ header {
     background-color: #FF9800;
     box-shadow: 0 0 10px 1px #757575;
     display: inline-block;
+    height: 0%;
     margin-top: 24px;
     padding: 16px;
 }
@@ -60,7 +66,9 @@ input[type="submit"]:active {
 }
 
 .result-container {
-    border: 2px solid green;
+    background-color: #B3E5FC;
+    border: 2px solid #B3E5FC;
+    box-shadow: 0 0px 10px 2px #BDBDBD;
     display: inline-block;
     margin-top: 24px;
     padding: 16px;
@@ -70,4 +78,8 @@ input[type="submit"]:active {
 .result-container ul {
     list-style-position: inside;
     padding-left: 16px;
+}
+
+.person-age {
+    padding: 8px;
 }
